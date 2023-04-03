@@ -45,7 +45,7 @@ except Exception as e:
 
 try:
     LOGS.info("⌭ جـاري تحميـل الملحقـات ⌭")
-    zedub.loop.✘eate_task(saves())
+    zedub.loop.create_task(saves())
     LOGS.info("✓ تـم تحميـل الملحقـات .. بنجـاح ✓")
 except Exception as e:
     LOGS.error(f"- {e}")
