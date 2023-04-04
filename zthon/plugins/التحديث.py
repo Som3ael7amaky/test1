@@ -36,7 +36,7 @@ heroku_api = "https://api.heroku.com"
 
 UPSTREAM_REPO_BRANCH = "main"
 
-REPO_REMOTE_NAME = "poname"
+REPO_REMOTE_NAME = "temponame"
 IFFUCI_ACTIVE_BRANCH_NAME = "main"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/main"
@@ -289,7 +289,7 @@ async def upstream(event):
         repo = Repo.init()
         origin = repo.create_remote("upstream", off_repo)
         origin.fetch()
-        repo.create_head("master", origin.refs.master)
+        repo.create_head("main", origin.refs.master)
         repo.heads.master.set_tracking_branch(origin.refs.master)
         repo.heads.master.checkout(True)
     with contextlib.suppress(BaseException):
