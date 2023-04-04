@@ -29,7 +29,7 @@ zedversion = "3.1.1"
 
 def close_connection(*_):
     print("تم اغلاق الاتصال بالسورس")
-    runasync(sbb_b.disconnect())
+    runasync(Zthon.disconnect())
     sys.exit(143)
 
 
