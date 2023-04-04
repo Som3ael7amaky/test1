@@ -1,13 +1,19 @@
-FROM som3ael7amaky/test1:alpine
+FROM nikolaik/python-nodejs:python3.9-nodejs18
 
-#clonning repo 
-RUN git clone https://github.com/som3ael7amaky/test1/tree/master.git /root/zthon
-#working directory 
-WORKDIR /root/zthon
+RUN apt-get update -y && apt-get upgrade -y \
 
-# Install requirements
-RUN pip3 install -U -r requirements.txt
+    && apt-get install -y --no-install-recommends ffmpeg \
 
-ENV PATH="/home/zthon/bin:$PATH"
+    && apt-get clean \
+
+    && rm -rf /var/lib/apt/lists/*
+
+COPY . /app/
+
+WORKDIR /app/
+
+RUN pip3 install --upgrade pip
+
+RUN pip3 install -U pip && pip3 install -U -r requirements.txt
 
 CMD ["python3","-m","zthon"]
