@@ -36,7 +36,7 @@ heroku_api = "https://api.heroku.com"
 
 UPSTREAM_REPO_BRANCH = "main"
 
-REPO_REMOTE_NAME = "temponame"
+REPO_REMOTE_NAME = "poname"
 IFFUCI_ACTIVE_BRANCH_NAME = "main"
 NO_HEROKU_APP_CFGD = "no heroku application found, but a key given? 😕 "
 HEROKU_GIT_REF_SPEC = "HEAD:refs/heads/main"
